@@ -3,15 +3,20 @@
 # Part 1
 
 def sum(arr)
-  # YOUR CODE HERE
+  total = 0
+  arr.each {|a| total += a}
+  total
 end
 
 def max_2_sum(arr)
-  # YOUR CODE HERE
+  return 0 if arr.empty?
+  return arr.first if arr.length == 1
+  arr.sort.last(2).sum
 end
 
 def sum_to_n?(arr, n)
-  # YOUR CODE HERE
+  return false if arr.empty? || arr.length == 1
+  arr.combination(2).any? {|a, b| a + b == n }
 end
 
 # Part 2
